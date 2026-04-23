@@ -1,90 +1,197 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <title>Motocykle - Pasja i Adrenalina</title>
 
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        header {
-            padding: 20px;
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-        }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0a0a0a;
+      color: #fff;
+      scroll-behavior: smooth;
+    }
 
-        .container {
-            max-width: 800px;
-            margin: 50px auto;
-            background: white;
-            color: #333;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            text-align: center;
-        }
+    header {
+      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1518655048521-f130df041f66') center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
 
-        h1 {
-            margin-bottom: 15px;
-        }
+    header h1 {
+      font-size: 70px;
+      background: rgba(0,0,0,0.7);
+      padding: 25px;
+      border-radius: 12px;
+      animation: fadeIn 2s ease;
+    }
 
-        p {
-            margin-bottom: 20px;
-        }
+    nav {
+      position: sticky;
+      top: 0;
+      background: #000;
+      padding: 15px;
+      text-align: center;
+      z-index: 1000;
+    }
 
-        button {
-            background: #667eea;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 25px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+    nav a {
+      color: #fff;
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: bold;
+      position: relative;
+    }
 
-        button:hover {
-            background: #5a67d8;
-        }
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: red;
+      left: 0;
+      bottom: -5px;
+      transition: 0.3s;
+    }
 
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            opacity: 0.8;
-        }
-    </style>
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 36px;
+    }
+
+    .cards {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      flex: 1 1 300px;
+      background: #111;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: 0.4s;
+      position: relative;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 0 20px red;
+    }
+
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      padding: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background: red;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #ff3333;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #000;
+      margin-top: 40px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
+
 <body>
 
 <header>
-    Moja Strona 🌐
+  <h1>🏍️ PASJA. PRĘDKOŚĆ. WOLNOŚĆ.</h1>
 </header>
 
-<div class="container">
-    <h1>Test publikacji strony</h1>
-    <p>To jest już trochę ładniejsza strona 😎</p>
+<nav>
+  <a href="#about">O nas</a>
+  <a href="#bikes">Motocykle</a>
+  <a href="#contact">Kontakt</a>
+</nav>
 
-    <button onclick="klik()">Kliknij mnie</button>
-</div>
+<section id="about">
+  <h2>O nas</h2>
+  <p style="text-align:center; max-width:700px; margin:auto;">
+    Motocykle to nie tylko pojazdy – to styl życia. Adrenalina, wolność i pasja,
+    której nie da się zastąpić niczym innym.
+  </p>
+</section>
+
+<section id="bikes">
+  <h2>Typy motocykli</h2>
+
+  <div class="cards">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
+      <h3>Sportowe</h3>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1520975922284-9cbd2a4c7c7d">
+      <h3>Chopper</h3>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9">
+      <h3>Turystyczne</h3>
+    </div>
+  </div>
+
+  <div style="text-align:center;">
+    <a href="#" class="btn">Zobacz więcej</a>
+  </div>
+
+</section>
+
+<section id="contact">
+  <h2>Kontakt</h2>
+  <p style="text-align:center;">Email: kontakt@motocykle.pl</p>
+</section>
 
 <footer>
-    © 2026 Moja strona
+  <p>© 2026 Motocykle | Stworzone z pasji</p>
 </footer>
-
-<script>
-    function klik() {
-        alert("Działa! 🚀");
-    }
-</script>
 
 </body>
 </html>
